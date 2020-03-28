@@ -1,40 +1,25 @@
 <template>
   <div id="app">
-    <nav-bar>
-      <div slot="center">shouye</div>
-    </nav-bar>
+    <!-- <nav-bar class="home-nav">
+      <template v-slot:left>上一级</template>
+      <template v-slot:center>
+        标题栏
+        <!-- <div class="home-nav">标题栏</div> -->
+      <!-- </template>
+      <template v-slot:right>下一级</template>
+    </nav-bar> -->
     <router-view></router-view>
-    <tab-bar>
-      <tab-bar-item path="/home">首页
-        <img slot="item-icon" src="" alt="a">
-        <!-- <span class="icon-io"></span> -->
-        <img slot="item-icon-active" src="" alt="aa">
-        <div slot="item-text">首页</div>
-      </tab-bar-item>
-      <tab-bar-item path="/category">
-        <img slot="item-icon" src="" alt="a">
-        <img slot="item-icon-active" src="" alt="aa">
-        <div slot="item-text">分类</div>
-      </tab-bar-item>
-      <tab-bar-item path="/cart">
-        <img slot="item-icon" src="" alt="a">
-        <img slot="item-icon-active" src="" alt="aa">
-        <div slot="item-text">购物</div>
-      </tab-bar-item>
-      <tab-bar-item path="/profile">
-        <img slot="item-icon" src="" alt="a">
-        <img slot="item-icon-active" src="" alt="aa">
-        <div slot="item-text">我的</div>
-      </tab-bar-item>
-    </tab-bar>
+    <main-tab-bar></main-tab-bar>
   </div>
 </template>
 
 <script>
 
-import TabBar from "./components/common/tabbar/TabBar"
-import TabBarItem from "./components/common/tabbar/TabBarItem"
-import NavBar from "./components/common/navbar/NavBar"
+// import TabBar from "./components/common/tabbar/TabBar"
+// import TabBarItem from "./components/common/tabbar/TabBarItem"
+//别名
+import MainTabBar from 'components/content/mainTarBar/mainTabBar'
+import NavBar from "components/common/navbar/NavBar"
 
 export default {
   name: 'App',
@@ -42,8 +27,9 @@ export default {
     return {}
   },
   components: {
-    TabBar,
-    TabBarItem,
+    // TabBar,
+    // TabBarItem,
+    MainTabBar,
     NavBar
   },
   methods: {}
@@ -52,4 +38,7 @@ export default {
 <style scoped>
   /* @import "./assets/css/base.css"; */
   /* @import "./assets/css/.." */
+  .home-nav{
+    background-color: pink;
+  }
 </style>

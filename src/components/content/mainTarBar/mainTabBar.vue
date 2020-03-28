@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <router-view></router-view>
     <tab-bar>
-      <tab-bar-item path="/home">首页
+      <tab-bar-item path="/home">
         <img slot="item-icon" src="" alt="a">
         <!-- <span class="icon-io"></span> -->
         <img slot="item-icon-active" src="" alt="aa">
@@ -28,9 +27,9 @@
 </template>
 
 <script>
-
-import TabBar from "./components/tabbar/TabBar"
-import TabBarItem from "./components/tabbar/TabBarItem"
+//已经用别名
+import TabBar from "components/common/tabbar/TabBar"
+import TabBarItem from "components/common/tabbar/TabBarItem"
 
 export default {
   name: 'App',
@@ -45,6 +44,6 @@ export default {
 }
 </script>
 <style scoped>
-  @import "./assets/css/base.css";
+  /* @import "./assets/css/base.css"; */
   /* @import "./assets/css/.." */
 </style>
