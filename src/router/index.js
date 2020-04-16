@@ -8,8 +8,14 @@ const Home  = () => import('../views/Home/Home.vue')
 const Category = () => import('../views/Category/Category.vue')
 const Cart = () => import('../views/Cart/Cart.vue')
 const Profile = () => import('../views/Profile/Profile.vue')
+const Detail = () => import('../views/detail/Detail.vue')
 
 Vue.use(VueRouter)
+
+// const routerPush = VueRouter.prototype.push
+// VueRouter.prototype.push = function push(location) {
+//   return routerPush.call(this, location).catch(error=> error)
+// }
 
 const routes = [
   {
@@ -31,6 +37,10 @@ const routes = [
   {
     path: '/Profile',
     component: Profile
+  },
+  {
+    path: "/detail/:iid",
+    component: Detail
   }
 ]
 

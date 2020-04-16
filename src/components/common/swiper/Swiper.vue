@@ -49,7 +49,7 @@
 
         // 2.开启定时器
         this.startTimer();
-      }, 100)
+      }, 1000)
     },
     methods: {
 		  /**
@@ -107,6 +107,8 @@
        * 设置滚动的位置
        */
       setTransform: function (position) {
+        //transform表示向右移动position px，向下移动0px
+        //-webkit 是表示针对 safari 浏览器支持，-ms表示针对 IE 浏览器支持。
         this.swiperStyle.transform = `translate3d(${position}px, 0, 0)`;
         this.swiperStyle['-webkit-transform'] = `translate3d(${position}px), 0, 0`;
         this.swiperStyle['-ms-transform'] = `translate3d(${position}px), 0, 0`;
@@ -212,6 +214,7 @@
   #hy-swiper {
     overflow: hidden;
     position: relative;
+    /* width: 100%; */
   }
 
   .swiper {

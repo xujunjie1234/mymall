@@ -9,7 +9,8 @@ module.exports = {
                 'network': "@/network",
             }
         }
-    }
+    },
+    
 }
 // const path = require('path');
 
