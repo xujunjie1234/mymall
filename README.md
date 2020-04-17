@@ -1,4 +1,4 @@
-# mymall
+# mymall eee
 ## Project setup
 ```
 npm install
