@@ -1,5 +1,4 @@
-# supermall
-
+# mymall
 ## Project setup
 ```
 npm install
