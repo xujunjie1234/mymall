@@ -142,7 +142,7 @@
         const page = this.goods[type].page + 1
         getHomeGoods(type,page).then(res => {
           if (res !== undefined) {
-
+            // console.log(res)
             this.goods[type].list.push(...res.data.list)
             this.goods[type].page += 1 
             this.$refs.scroll && this.$refs.scroll.finishPullUp()

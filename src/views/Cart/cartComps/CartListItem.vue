@@ -10,13 +10,20 @@
 			<p class="item-title">{{itemInfo.title}}</p>
 			<p class="item-desc">{{itemInfo.desc}}</p>
 			<span class="item-price">￥{{itemInfo.price}}</span>
-			<span class="item-count">x{{itemInfo.count}}</span>
+			
+			<span class="item-count">
+				<span @click="sub(itemInfo)">-</span>
+				 {{ itemInfo.count }} 
+				<span @click="add(itemInfo)">+</span>
+			</span>
+			
 		</div>
 	</div>
 </template>
 
 <script>
 	import CheckButton from "components/content/checkButton/CheckButton"
+	import { mapMutations } from 'vuex'
 	export default {
 		
 		name: 'CartListItem',
@@ -34,13 +41,24 @@
 		components: {
 			CheckButton
 		},
+		computed: {
+			},
 		methods: {
+			...mapMutations(['add','sub']),
 			itemClick() {
 				this.$router.push('/detail/' + this.itemInfo.iid)
 			},
 			checkClick() {
 				this.itemInfo.check = !this.itemInfo.check
-			}
+			},
+			// sub() {
+			// 	if (this.itemInfo.count > 0){
+			// 		this.itemInfo.count--
+			// 	}
+			// },
+			// add() {
+			// 	this.itemInfo.count++
+			// }
 		}
 	}
 </script>
@@ -51,7 +69,6 @@
 		border-bottom: 0.04rem solid rgba(128, 128, 128, 0.4);
 		display: flex;
 		padding: 5px;
-
 	}
 
 	.item-select {
@@ -107,14 +124,17 @@
 	}
 
 	.item-price {
-		font-size: 18px;
+		font-size: 20px;
 		color: var(--color-tint);
 		position: absolute;
 		left: 0;
+		bottom: 20px;
 	}
 
 	.item-count {
 		position: absolute;
-		right: 0px;
+		font-size: 20px;
+		right: 10px;
+		bottom: 20px;
 	}
 </style>
